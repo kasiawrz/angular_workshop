@@ -1,6 +1,13 @@
 <div class="control has-addons">
-  <input type="text" class="input">
-  <button class="button">find</button>
+  <input [(ngModel)]="query" type="text" class="input">
+  <button class="button" (click)="search(query)">find</button>
 </div>
 
-{{ shows | json }}
+<div class="columns is-multiline">
+  <div class="column is-4" *ngFor="let show of shows">
+
+    <img [src]="show.image.original" alt="">
+    {{show.name}}
+
+  </div>
+</div>
